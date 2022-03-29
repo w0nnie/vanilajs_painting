@@ -40,3 +40,6 @@ canvas.addEventListener("mousedown", onmouseDown);
 canvas.addEventListener("mouseup", stopPainting);
 canvas.addEventListener("mouseleave",stopPainting);
 console.log(Array.from(colors)); // object로부터 array를 만듬
+console.log(colors); // object로부터 array를 만듬
+//Array.from 을 사용하지 않았을시 Prototype = HTMLCollection  =>  유사배열([0] 사용가능) color의 경우 div element들을 담고있다 
+//Array.from 사용시 Prototype = Array
