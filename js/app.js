@@ -9,7 +9,7 @@ ctx.lineWidth = 2.5;
 
 let painting = false;
 
-
+//max commit test
 function startPainting(){
     painting = true;
 }
