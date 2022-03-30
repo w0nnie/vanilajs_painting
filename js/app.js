@@ -35,6 +35,10 @@ function onmouseDown(event){
     console.log(painting);
 }
 
+function changeColor(event){
+    console.log(event.target);
+}
+
 canvas.addEventListener("mousemove", onmouseMove);
 canvas.addEventListener("mousedown", onmouseDown);
 canvas.addEventListener("mouseup", stopPainting);
