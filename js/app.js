@@ -4,7 +4,7 @@ const colors = document.getElementsByClassName("jsColor");
 
 canvas.width = 700;
 canvas.height = 700;
-ctx.strokeStyle = "#FF3B30";
+ctx.strokeStyle = "#2c2c2c";
 ctx.lineWidth = 2.5;
 
 let painting = false;
@@ -36,13 +36,17 @@ function onmouseDown(event){
 }
 
 function changeColor(event){
-    console.log(event.target);
+    const color = event.target.style.backgroundColor;
+    ctx.strokeStyle = color;
 }
-
-canvas.addEventListener("mousemove", onmouseMove);
-canvas.addEventListener("mousedown", onmouseDown);
-canvas.addEventListener("mouseup", stopPainting);
-canvas.addEventListener("mouseleave",stopPainting);
+if(canvas){
+    canvas.addEventListener("mousemove", onmouseMove);
+    canvas.addEventListener("mousedown", onmouseDown);
+    canvas.addEventListener("mouseup", stopPainting);
+    canvas.addEventListener("mouseleave",stopPainting);    
+}
+// colors.forEach(color => color.addEventListener("click",changeColor)); forEach 메서드의 경우 array(배열) 요소를 각각에 대해 실행한다 object에서는 사용이 불가능하다.
+Array.from(colors).forEach(color => color.addEventListener("click",changeColor));
 console.log(Array.from(colors)); // object로부터 array를 만듬
 console.log(colors); // object로부터 array를 만듬
 //Array.from 을 사용하지 않았을시 Prototype = HTMLCollection  =>  유사배열([0] 사용가능) color의 경우 div element들을 담고있다 
