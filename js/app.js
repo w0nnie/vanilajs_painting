@@ -1,7 +1,7 @@
 const canvas = document.getElementById("jsCanvas");
 var ctx = canvas.getContext('2d');
 const colors = document.getElementsByClassName("jsColor");
-
+const range = document.getElementById("jsRange");
 canvas.width = 700;
 canvas.height = 700;
 ctx.strokeStyle = "#2c2c2c";
@@ -39,12 +39,16 @@ function changeColor(event){
     const color = event.target.style.backgroundColor;
     ctx.strokeStyle = color;
 }
+function rangeChange(event){
+    ctx.lineWidth = event.target.value;
+}
 if(canvas){
     canvas.addEventListener("mousemove", onmouseMove);
     canvas.addEventListener("mousedown", onmouseDown);
     canvas.addEventListener("mouseup", stopPainting);
     canvas.addEventListener("mouseleave",stopPainting);    
 }
+range.addEventListener("click",rangeChange);
 // colors.forEach(color => color.addEventListener("click",changeColor)); forEach 메서드의 경우 array(배열) 요소를 각각에 대해 실행한다 object에서는 사용이 불가능하다.
 Array.from(colors).forEach(color => color.addEventListener("click",changeColor));
 console.log(Array.from(colors)); // object로부터 array를 만듬
