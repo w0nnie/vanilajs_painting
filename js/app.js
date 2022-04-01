@@ -68,7 +68,7 @@ canvas.addEventListener("mouseup", stopPainting);
 canvas.addEventListener("mouseleave",stopPainting);    
 canvas.addEventListener("click",handleCanvasClick);
 range.addEventListener("click",rangeChange);
-mode.addEventListener("click",buttonChange);
+mode.addEventListener("click",buttonChange);//commit test
 // colors.forEach(color => color.addEventListener("click",changeColor)); forEach 메서드의 경우 array(배열) 요소를 각각에 대해 실행한다 object에서는 사용이 불가능하다.
 Array.from(colors).forEach(color => color.addEventListener("click",changeColor));
 console.log(Array.from(colors)); // object로부터 array를 만듬
